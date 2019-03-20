@@ -1,72 +1,148 @@
 import {Cite} from 'spectacle';
 import {DarkSlide, CodeSlide} from './slides';
-import RegularComponent from './regular-component';
 
-# Spectacle MDX!
+## What is React?
 
-**open the presentation/index.mdx file to get started**
-
----
-export default DarkSlide
-
-export const transition = ['zoom']
-
-# Write your Spectacle Presentations in Markdown
-## And seamlessly use React Components  
-**How sweet is that**  
-**(super sweet)**
+- “A JavaScript library for building user interfaces.”
+- Renders your UI and responds to events.
+- Re-renders the whole application on every data change… very efficiently.
 
 ---
-
-![datboi](https://pbs.twimg.com/media/CkjFUyTXEAEysBY.jpg)
-
+## React is the V in MVC
 
 ---
+## What problem does React solve?
 
-<RegularComponent/>
+> Every framework can be viewed as an attempt to say "the hardest part of writing a webapp is {X}, so here's some code to make that easier".
+> …
+> Angular is what you get if you think the biggest problem with writing webapps is that Javascript isn't Java.
+> …
+> React + Redux is based on the idea that what's really hard with writing webapps is non-deterministic behaviour and unclear data flow.
 
----
-
-###### Typography
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-Standard Text
+– [What are pros and cons of using React.js+Flux compare with other MVC frameworks? : reactjs](https://www.reddit.com/r/reactjs/comments/39wsfi/what_are_pros_and_cons_of_using_reactjsflux/cs7msvp)
 
 ---
+## Library !== Framework
+Angular / React comparison
 
-###### Standard List
+Angular
+- Routing/Navigation
+- Templating engine
+- Http client
+- Form validation
+- Animations
+- I18n
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
+React has nothing of this.
 
 ---
+# Good or Bad?
+👍 You can pick exactly the libraries you need
+👎 You need to pick exactly the libraries you need
 
-> Example Quote
+---
+## React is all about components
+With React you split up your application into reusable components.
 
-<Cite>Author</Cite>
+Typical components:
+- Page header
+- Date input control
+- Registration form
+- Navigation
+- Etc.
+
+---
+## What is a React component?
+A component can receive properties (aka. props) and can have internal state.
+Components should only contain display logic.
+
+Writing React components is a bit like writing your own HTML tags:
+
+```html
+  <my-component myproperty="is awesome"></my-component>
+```
 
 ---
 export default CodeSlide
 
+## Hello World
+
+[React Hello World - CodeSandbox](https://codesandbox.io/s/n7lrkrxvj0)
+
 ```javascript
-class SuperCoolComponent extends React.Component {
-  render() {
-    return (
-      <p>code slide works in markdown too whaaaaat</p>
-    );
-  }
+import React from "react";
+import ReactDOM from "react-dom";
+
+//import "./styles.css";
+
+function App(props) {
+  return (
+    <div className="App">
+      <h1>👋🌍</h1>
+    </div>
+  );
 }
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App/>, rootElement);
 ```
+
+---
+export default CodeSlide
+
+## Props
+
+You can think of props as parameters that you can pass to a component.
+
+```javascript
+import React from "react";
+import ReactDOM from "react-dom";
+
+//import "./styles.css";
+
+function App(props) {
+  return (
+    <div className="App">
+      <h1>👋{props.name}</h1>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App name="Mario"/>, rootElement);
+```
+
+[React Component Props](https://codesandbox.io/s/ql5k7j3q6j)
+
+---
+## Declarative
+
+---
+## JSX
+
+---
+## List rendering
+Compare with Angular or Vue
+
+---
+## Class-based  VS Functional components
+
+---
+## Separation of concerns?
+
+![2d21f418.png](:storage/52dc82ac-4ee1-4726-b68d-448bbee9f4d3/2d21f418.png)
+
+[Intro to React and Redux](https://blog.isquaredsoftware.com/presentations/2018-03-react-redux-intro/#/23)
+
+---
+## Why use React?
+
+State of user interfaces is difficult to handle with vanilla JavaScript.
+
+React allows you to focus on your application logic
+
+De-facto industry standard with a huge ecosystem
+
+---
+# Sources
+[Intro to React and Redux](https://blog.isquaredsoftware.com/presentations/2018-03-react-redux-intro)
