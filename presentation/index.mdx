@@ -1,4 +1,4 @@
-import {BlockQuote, Quote, Cite, Link, Text, S} from 'spectacle';
+import {Heading, List, ListItem, Layout, Fill, BlockQuote, Quote, Cite, Link, Text, S} from 'spectacle';
 import {DarkSlide, CodeSlide} from './slides';
 
 ## What is React?
@@ -86,6 +86,54 @@ Writing React components is a bit like writing your own HTML tags:
 ```
 
 ---
+
+## Two types of components
+
+<Layout>
+<Fill>
+<Heading size={4}>Class-based</Heading>
+  <Text>Stateful</Text>
+  <Text>aka. container</Text>
+</Fill>
+<Fill>
+<Heading size={4}>Functional</Heading>
+  <Text>Stateless</Text>
+  <Text>aka. presentational</Text>
+  <Text>basically only the render method</Text>
+  </Fill>
+  </Layout>
+
+---
+
+## Class-based component
+
+```javascript
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>Hello world</div>
+    );
+  } 
+}
+```
+
+---
+
+## Functional component
+
+```javascript
+function MyComponent(props) {
+  return (
+    <div>Hello World</div>
+  );
+}
+```
+
+---
+
 ## Hello World
 
 ```javascript
