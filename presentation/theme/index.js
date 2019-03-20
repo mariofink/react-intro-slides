@@ -10,20 +10,27 @@ const colors = {
 const theme = createTheme(
   colors,
   {
-    primary: "Fira Code",
-    secondary: "Fira Code",
+    primary: "Fira Sans",
+    secondary: "Fira Sans",
     tertiary: "Fira Code"
   },
   {
     progress: {
-      pacmanTop: {
-        background: colors.quaternary
+      number: {
+        container: {
+          color: colors.quartenary
+        }
       },
-      pacmanBottom: {
-        background: colors.quaternary
-      },
-      point: {
-        borderColor: colors.quaternary
+      pacman: {
+        pacmanTop: {
+          background: colors.quartenary
+        },
+        pacmanBottom: {
+          background: colors.quartenary
+        },
+        point: {
+          borderColor: colors.quartenary
+        }
       }
     },
     components: {
@@ -47,6 +54,12 @@ const theme = createTheme(
           fontSize: "1.5rem"
         }
       },
+      quote: {
+        color: colors.secondary,
+        fontSize: "2rem",
+        lineHeight: "1.5",
+        fontWeight: "normal"
+      },
       list: {
         listStylePosition: "outside"
       },
@@ -56,5 +69,7 @@ const theme = createTheme(
     }
   }
 );
+
+console.log(theme);
 
 export default theme;
