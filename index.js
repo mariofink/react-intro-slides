@@ -30,7 +30,7 @@ const creeperTransition = (transitioning, forward) => {
 ReactDOM.render(
   <AppContainer errorReporter={CustomErrorReporter}>
     <Deck
-      transition={[creeperTransition]}
+      transition={[]}
       transitionDuration={500}
       progress="pacman"
       theme={theme}
@@ -51,7 +51,7 @@ if (module.hot) {
     ReactDOM.render(
       <AppContainer errorReporter={CustomErrorReporter}>
         <Deck
-          transition={[creeperTransition]}
+          transition={[]}
           transitionDuration={500}
           progress="pacman"
           theme={newTheme}

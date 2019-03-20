@@ -62,7 +62,7 @@ These are some features that Angular offers out-of-the-box:
 ---
 
 ## React is all about components
-<Text>With React you split up your application into reusable components.</Text>
+With React you split up your application into reusable components.
 
 Typical components:
 
@@ -73,6 +73,7 @@ Typical components:
 - Etc.
 
 ---
+
 ## What is a React component?
 A component can receive properties (aka. props) and can have internal state.
 
@@ -85,8 +86,6 @@ Writing React components is a bit like writing your own HTML tags:
 ```
 
 ---
-export default CodeSlide
-
 ## Hello World
 
 ```javascript
@@ -106,6 +105,31 @@ ReactDOM.render(<App/>, rootElement);
 ```
 
 [React Hello World - CodeSandbox](https://codesandbox.io/s/n7lrkrxvj0)
+
+---
+## JSX !== HTML
+
+```javascript
+function App(props) {
+  return (
+    <div className="App">
+      <h1>👋🌍</h1>
+    </div>
+  );
+}
+```
+
+---
+
+## JSX is syntactical sugar for
+
+### React.createElement
+
+```javascript
+React.createElement("div", null, "Hello World")
+```
+
+### 🍭 mmmhh… tasty  
 
 ---
 export default CodeSlide
@@ -133,10 +157,38 @@ ReactDOM.render(<App name="Mario"/>, rootElement);
 [React Component Props](https://codesandbox.io/s/ql5k7j3q6j)
 
 ---
-## Declarative
+export default CodeSlide
+
+## State
+
+```javascript
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      smiles: []
+    };
+  }
+  increase() {
+    this.setState({
+      smiles: this.state.smiles.concat("🙂")
+    });
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={() => this.increase()}>Click me</button>
+        <p>{this.state.smiles}</p>
+      </div>
+    );
+  }
+}
+```
+
+[Component with state - CodeSandbox](https://codesandbox.io/s/px092olmq)
 
 ---
-## JSX
+## Declarative
 
 ---
 ## List rendering
@@ -157,9 +209,9 @@ Compare with Angular or Vue
 
 State of user interfaces is difficult to handle with vanilla JavaScript.
 
-React allows you to focus on your application logic
+React allows you to focus on your application logic.
 
-De-facto industry standard with a huge ecosystem
+De-facto industry standard with a huge ecosystem.
 
 ---
 # Sources

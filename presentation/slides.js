@@ -53,7 +53,7 @@ export const DarkSlide = ({ children, ...rest }) => (
 // CODE LAYOUT
 
 export const CodeSlide = ({ children, ...rest }) => (
-  <Slide {...rest}>
+  <Slide {...rest} align="center flex-start">
     <MDXProvider components={components}>{children}</MDXProvider>
   </Slide>
 );
