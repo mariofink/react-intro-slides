@@ -1,4 +1,6 @@
-# Spectacle Boilerplate
+# Introduction to React
+
+Based on the [Spectacle MDX Boilerplate](https://github.com/FormidableLabs/spectacle-boilerplate-mdx/).
 
 ## Contents
 
