@@ -11,7 +11,8 @@ const theme = createTheme(
   colors,
   {
     primary: "Fira Code",
-    secondary: "Fira Code"
+    secondary: "Fira Code",
+    tertiary: "Fira Code"
   },
   {
     progress: {
@@ -45,6 +46,9 @@ const theme = createTheme(
         h6: {
           fontSize: "1.5rem"
         }
+      },
+      list: {
+        listStylePosition: "outside"
       },
       codePane: {
         fontSize: "1.5rem"
