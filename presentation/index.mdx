@@ -1,4 +1,4 @@
-import {Cite} from 'spectacle';
+import {BlockQuote, Quote, Cite, Link, Text, S} from 'spectacle';
 import {DarkSlide, CodeSlide} from './slides';
 
 ## What is React?
@@ -8,24 +8,29 @@ import {DarkSlide, CodeSlide} from './slides';
 - Re-renders the whole application on every data change… very efficiently.
 
 ---
-## React is the V in MVC
 
----
 ## What problem does React solve?
 
-> Every framework can be viewed as an attempt to say "the hardest part of writing a webapp is {X}, so here's some code to make that easier".
-> …
-> Angular is what you get if you think the biggest problem with writing webapps is that Javascript isn't Java.
-> …
-> React + Redux is based on the idea that what's really hard with writing webapps is non-deterministic behaviour and unclear data flow.
+<BlockQuote>
+  <Quote>
+    <p>Every framework can be viewed as an attempt to say "the hardest part of writing a webapp is X, so here's some code to make that easier". …</p>
+    <p><strong>Angular</strong> is what you get if you think the biggest problem with writing webapps is that Javascript isn't Java. … </p>
+    <p><strong>React + Redux</strong> is based on the idea that what's really hard with writing webapps is non-deterministic behaviour and unclear data flow.</p>
+  </Quote>
+  <Cite>
+  <Link href="https://www.reddit.com/r/reactjs/comments/39wsfi/what_are_pros_and_cons_of_using_reactjsflux/cs7msvp">
+    What are pros and cons of using React.js+Flux compare with other MVC frameworks? : reactjs
+  </Link>
+  </Cite>
+</BlockQuote>
 
-– [What are pros and cons of using React.js+Flux compare with other MVC frameworks? : reactjs](https://www.reddit.com/r/reactjs/comments/39wsfi/what_are_pros_and_cons_of_using_reactjsflux/cs7msvp)
+
 
 ---
 ## Library !== Framework
-Angular / React comparison
 
-Angular
+These are some features that Angular offers out-of-the-box:
+
 - Routing/Navigation
 - Templating engine
 - Http client
@@ -33,18 +38,34 @@ Angular
 - Animations
 - I18n
 
-React has nothing of this.
+---
+
+# 🤷‍♀️
+# React has none of this 
 
 ---
+
+# V for ~~Victory~~ View
+
+## React is the V in MVC
+
+---
+
 # Good or Bad?
-👍 You can pick exactly the libraries you need
-👎 You need to pick exactly the libraries you need
+<Text margin="2rem">
+👍 You <S type="bold">can</S> pick exactly the libraries you need
+</Text>
+<Text>
+👎 You <S type="bold">need to</S> pick exactly the libraries you need
+</Text>
 
 ---
+
 ## React is all about components
-With React you split up your application into reusable components.
+<Text>With React you split up your application into reusable components.</Text>
 
 Typical components:
+
 - Page header
 - Date input control
 - Registration form
@@ -54,6 +75,7 @@ Typical components:
 ---
 ## What is a React component?
 A component can receive properties (aka. props) and can have internal state.
+
 Components should only contain display logic.
 
 Writing React components is a bit like writing your own HTML tags:

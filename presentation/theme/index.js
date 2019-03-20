@@ -34,12 +34,21 @@ const theme = createTheme(
       }
     },
     components: {
+      text: {
+        marginBottom: "1.5rem",
+        textAlign: "left"
+      },
+      listItem: {
+        marginBottom: "1.5rem"
+      },
       heading: {
         h1: {
-          fontSize: "4rem"
+          fontSize: "6rem",
+          marginBottom: "2rem"
         },
         h2: {
-          fontSize: "3.5rem"
+          fontSize: "3.5rem",
+          marginBottom: "2rem"
         },
         h3: {
           fontSize: "3rem"
@@ -58,7 +67,11 @@ const theme = createTheme(
         color: colors.secondary,
         fontSize: "2rem",
         lineHeight: "1.5",
-        fontWeight: "normal"
+        fontWeight: "normal",
+        borderLeft: "0.5rem solid " + colors.tertiary
+      },
+      link: {
+        color: colors.tertiary
       },
       list: {
         listStylePosition: "outside"

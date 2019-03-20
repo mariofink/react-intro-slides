@@ -32,6 +32,7 @@ ReactDOM.render(
     <Deck
       transition={[creeperTransition]}
       transitionDuration={500}
+      progress="pacman"
       theme={theme}
     >
       {slides.map((S, i) => {
@@ -52,6 +53,7 @@ if (module.hot) {
         <Deck
           transition={[creeperTransition]}
           transitionDuration={500}
+          progress="pacman"
           theme={newTheme}
         >
           {newSlides.map((S, i) => {
