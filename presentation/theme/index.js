@@ -2,15 +2,18 @@ import createTheme from "../../createTheme";
 
 const colors = {
   primary: "white",
-  secondary: "#1F2022", // almost black w/ blueish tint
-  tertiary: "#fc300f", // bright red
-  quaternary: "#CECECE" // pale gray
+  secondary: "#1F2022",
+  tertiary: "#03A9FC",
+  quartenary: "#CECECE"
 };
 
-const theme = createTheme(colors, {
-    primary: "Montserrat",
-    secondary: "Helvetica"
-  }, {
+const theme = createTheme(
+  colors,
+  {
+    primary: "Fira Code",
+    secondary: "Fira Code"
+  },
+  {
     progress: {
       pacmanTop: {
         background: colors.quaternary
@@ -25,34 +28,29 @@ const theme = createTheme(colors, {
     components: {
       heading: {
         h1: {
-          fontSize: '4rem',
-          textTransform: 'uppercase'
+          fontSize: "4rem"
         },
         h2: {
-          fontSize: '3.5rem',
-          textTransform: 'uppercase'
+          fontSize: "3.5rem"
         },
         h3: {
-          fontSize: '3rem',
-          textTransform: 'uppercase'
+          fontSize: "3rem"
         },
         h4: {
-          fontSize: '2.5rem',
-          textTransform: 'uppercase'
+          fontSize: "2.5rem"
         },
         h5: {
-          fontSize: '2rem',
-          textTransform: 'uppercase'
+          fontSize: "2rem"
         },
         h6: {
-          fontSize: '1.5rem',
-          textTransform: 'uppercase'
+          fontSize: "1.5rem"
         }
       },
       codePane: {
-        fontSize: '2rem'
+        fontSize: "1.5rem"
       }
     }
-  });
+  }
+);
 
 export default theme;
