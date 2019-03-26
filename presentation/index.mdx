@@ -90,57 +90,11 @@ Components should only contain display logic.
 Writing React components is a bit like writing your own HTML tags:
 
 ```html
-  <my-component myproperty="is awesome"></my-component>
+  <MyComponent myproperty="is awesome"></MyComponent>
 ```
 
 ---
 
-## Two types of components
-
-<Layout>
-<Fill>
-<Heading size={4}>Class-based</Heading>
-  <Text>Stateful</Text>
-  <Text>aka. container</Text>
-</Fill>
-<Fill>
-<Heading size={4}>Functional</Heading>
-  <Text>Stateless</Text>
-  <Text>aka. presentational</Text>
-  <Text>basically only the render method</Text>
-  </Fill>
-  </Layout>
-
----
-
-## Class-based component
-
-```javascript
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>Hello world</div>
-    );
-  } 
-}
-```
-
----
-
-## Functional component
-
-```javascript
-function MyComponent(props) {
-  return (
-    <div>Hello World</div>
-  );
-}
-```
-
----
 
 ## Hello World
 
@@ -186,6 +140,56 @@ React.createElement("div", null, "Hello World")
 ```
 
 ### 🍭 mmmhh… tasty  
+
+---
+
+## Two types of components
+
+<Layout>
+<Fill>
+<Heading size={4}>Class-based</Heading>
+  <Text>Stateful</Text>
+  <Text>aka. container</Text>
+</Fill>
+<Fill>
+<Heading size={4}>Functional</Heading>
+  <Text>Stateless</Text>
+  <Text>aka. presentational</Text>
+  <Text>basically only the render method</Text>
+  </Fill>
+  </Layout>
+
+---
+
+## Class-based component
+
+```javascript
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+  render() {
+    return (
+      <div>Hello world</div>
+    );
+  } 
+}
+```
+
+---
+
+## Functional component
+
+```javascript
+function MyComponent(props) {
+  return (
+    <div>Hello World</div>
+  );
+}
+```
 
 ---
 export default CodeSlide
