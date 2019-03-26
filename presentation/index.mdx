@@ -251,8 +251,54 @@ class App extends React.Component {
 ## Declarative
 
 ---
-## List rendering
-Compare with Angular or Vue
+## It’s all JavaScript
+
+React does not require you to learn a new domain-specific language (e.g. templating) as everything is plain JavaScript.
+
+---
+export default CodeSlide
+
+## List rendering with Angular
+
+#### app.component.ts
+```javascript
+export class AppComponent {
+  list = ["Goodyear", "Dunlop", "Fulda"]
+}
+```
+
+#### app.component.html
+```html
+<div>
+  <ul>
+    <li *ngFor="let listItem of list">{{listItem}}</li>
+  </ul>
+</div>
+```
+
+[Angular list rendering - CodeSandbox](https://codesandbox.io/s/r50pjqm1lq?fontsize=14)
+
+---
+export default CodeSlide
+
+## List rendering with React
+
+```javascript
+function App() {
+  const myList = ["Goodyear", "Dunlop", "Fulda"];
+  return (
+    <div>
+      <ul>
+        {myList.map(listItem => (
+          <li>{listItem}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+[React List rendering - CodeSandbox](https://codesandbox.io/s/6jy8nyxozw?fontsize=14)
 
 ---
 ## Class-based  VS Functional components
@@ -260,7 +306,7 @@ Compare with Angular or Vue
 ---
 ## Separation of concerns?
 
-![2d21f418.png](:storage/52dc82ac-4ee1-4726-b68d-448bbee9f4d3/2d21f418.png)
+![Separation of Concerns](/separationOfConcerns.jpg)
 
 [Intro to React and Redux](https://blog.isquaredsoftware.com/presentations/2018-03-react-redux-intro/#/23)
 
