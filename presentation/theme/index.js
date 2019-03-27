@@ -10,9 +10,9 @@ const colors = {
 const theme = createTheme(
   colors,
   {
-    primary: "Fira Sans",
-    secondary: "Fira Sans",
-    tertiary: "Fira Code"
+    primary: "Fira Sans, sans-serif",
+    secondary: "Fira Sans, sans-serif",
+    tertiary: "Fira Code, monospace"
   },
   {
     progress: {
