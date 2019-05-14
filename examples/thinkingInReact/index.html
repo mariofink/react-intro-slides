@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Thinking In React</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 2rem;
+      padding: 1.5rem;
+    }
+
+    #app {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    table {
+      text-align: left;
+      line-height: 1.2rem;
+      min-width: 300px;
+    }
+
+    tr {
+      margin-bottom: 0.25rem;
+    }
+
+    .notinstock {
+      color: red;
+    }
+
+    .ProductCategoryRow {
+      font-weight: bold;
+    }
+
+    .showComponents .FilterableProductTable,
+    .showComponents .SearchBar,
+    .showComponents .ProductTable,
+    .showComponents .ProductCategoryRow,
+    .showComponents .ProductCategoryRow td,
+    .showComponents .ProductRow,
+    .showComponents .ProductRow td {
+      border-width: 2px;
+      border-style: solid;
+      padding: 0.5rem;
+      margin: 0.5rem;
+    }
+
+    .showComponents .ProductRow td:last-child {
+      position: relative;
+      left: -2px;
+    }
+
+    .showComponents .FilterableProductTable {
+      border-color: gold;
+      background: gold;
+    }
+
+    .showComponents .SearchBar {
+      border-color: blue;
+      background: blue;
+    }
+
+    .showComponents .ProductTable {
+      border-color: green;
+      background: green;
+    }
+
+    .showComponents .ProductCategoryRow,
+    .showComponents .ProductCategoryRow td {
+      border-color: cyan;
+      background: cyan;
+    }
+
+    .showComponents .ProductRow,
+    .showComponents .ProductRow td {
+      border-color: red;
+      background: red;
+    }
+
+    .controls {
+      margin-top: 4rem;
+      border-top: 4px solid #666;
+    }
+
+    .componentList {
+      padding:0;
+      list-style: none;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function showComponents() {
+      document.querySelector("body").classList.add("showComponents");
+      document.querySelector("#componentLegend").style.display = "block";
+    }
+  </script>
+</head>
+
+<body>
+  <div id="app" class="FilterableProductTable">
+    <form class="SearchBar">
+      <div>
+        <input type="search" placeholder="Filter products">
+      </div>
+      <input type="checkbox" id="showStockOnly" /><label for="showStockOnly">Only show products in stock</label>
+    </form>
+    <table class="ProductTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ProductCategoryRow">
+          <td colspan="2">Sporting goods</td>
+        </tr>
+        <tr class="ProductRow">
+          <td>Football</td>
+          <td>49,99€</td>
+        </tr>
+        <tr class="ProductRow">
+          <td>Baseball</td>
+          <td>9,99€</td>
+        </tr>
+        <tr class="notinstock ProductRow">
+          <td>Basketball</td>
+          <td>29,99€</td>
+        </tr>
+        <tr class="ProductCategoryRow">
+          <td colspan="2">Electronics</td>
+        </tr>
+        <tr class="ProductRow">
+          <td>Google Pixel 3</td>
+          <td>499,99€</td>
+        </tr>
+        <tr class="notinstock ProductRow">
+          <td>Apple iPhone XS</td>
+          <td>1099,99€</td>
+        </tr>
+        <tr class="ProductRow">
+          <td>Amazon Kindle</td>
+          <td>129,99€</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="componentLegend" style="display: none; width: 450px; margin: 0 auto;">
+    <h2>Components</h2>
+    <ul class="showComponents componentList" >
+      <li class="FilterableProductTable">FilterableProductTable</li>
+      <li class="SearchBar">SearchBar</li>
+      <li class="ProductTable">ProductTable</li>
+      <li class="ProductCategoryRow">ProductCategoryRow</li>
+      <li class="ProductRow">ProductRow</li>
+    </ul>
+  </div>
+  <div class="controls">
+    <button onclick="showComponents()">Show components</button>
+  </div>
+</body>
+
+</html>
