@@ -1,7 +1,9 @@
 {
   "name": "spectacle-boilerplate",
   "version": "1.0.1",
-  "description": "ReactJS Powered Presentation Framework",
+  "private": true,
+  "homepage": "https://mariofink.github.io/react-intro-slides",
+  "description": "Intro to React - powered by React & Spectacle",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
