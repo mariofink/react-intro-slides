@@ -1,14 +1,17 @@
 {
   "name": "spectacle-boilerplate",
   "version": "1.0.1",
-  "description": "ReactJS Powered Presentation Framework",
+  "private": true,
+  "homepage": "https://mariofink.github.io/react-intro-slides",
+  "description": "Intro to React - powered by React & Spectacle",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
-    "deploy": "npm run clean & npm run build && surge -p .",
     "export": "spectacle-renderer --delay 3000",
+    "predeploy": "npm run clean & npm run build",
+    "deploy": "gh-pages -d .",
     "start": "cross-env NODE_ENV=development node server.js"
   },
   "author": "",
@@ -50,6 +53,7 @@
     "eslint-plugin-react": "^7.13.0",
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
+    "gh-pages": "^2.0.1",
     "gray-matter": "^4.0.1",
     "html-loader": "^0.5.5",
     "is-buffer": "^2.0.3",
