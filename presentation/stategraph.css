@@ -1,0 +1,41 @@
+svg.state-graph {
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+svg.state-graph .node circle {
+	fill: #F3F3FF;
+	stroke: #03A9FC;
+	stroke-width: 20px;
+}
+
+svg.state-graph .node text {
+	font-size: 16px;
+	fill: #333;
+  transform: translate(-10px, 30px);
+}
+
+svg.state-graph .node {
+	cursor: pointer;
+}
+
+svg.state-graph path.link {
+	fill: none;
+	stroke: #03A9FC;
+	stroke-width: 5px;
+}
+
+svg.state-graph .has-state-A circle {
+  fill: #FD1C32;
+  stroke: #FD1C32;
+}
+svg.state-graph .has-state-B circle {
+  fill: #B0AA0B;
+  stroke: #B0AA0B;
+}
+
+svg.state-graph .rootnode circle {
+  stroke-width: 5px;
+}
+svg.state-graph .rootnode text {
+  transform: rotate(90);
+}

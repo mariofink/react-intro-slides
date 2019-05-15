@@ -1,0 +1,390 @@
+import {Appear, Heading, List, ListItem, Layout, Fill, BlockQuote, Quote, Cite, Link, Text, S} from 'spectacle';
+import {DarkSlide, CodeSlide} from './slides';
+import "./index.css";
+import StateGraph from "./state-graph"
+
+# Intro to React
+
+---
+
+## What is React?
+
+- “A JavaScript library for building user interfaces.”
+- Renders your UI and responds to events.
+- Re-renders the whole application on every data change… very efficiently.
+
+---
+
+## What problem does React solve?
+
+<BlockQuote>
+  <Quote>
+    <p>Every framework can be viewed as an attempt to say "the hardest part of writing a webapp is X, so here's some code to make that easier". …</p>
+    <p><strong>Angular</strong> is what you get if you think the biggest problem with writing webapps is that Javascript isn't Java. … </p>
+    <p><strong>React + Redux</strong> is based on the idea that what's really hard with writing webapps is non-deterministic behaviour and unclear data flow.</p>
+  </Quote>
+  <Cite>
+  <Link href="https://www.reddit.com/r/reactjs/comments/39wsfi/what_are_pros_and_cons_of_using_reactjsflux/cs7msvp">
+    What are pros and cons of using React.js+Flux compare with other MVC frameworks? : reactjs
+  </Link>
+  </Cite>
+</BlockQuote>
+
+
+
+---
+## Library !== Framework
+
+These are some features that Angular offers out-of-the-box:
+
+- Routing/Navigation
+- Templating engine
+- Http client
+- Form validation
+- Animations
+- I18n
+
+---
+
+# 🤷‍♀️
+# React has none of this 
+
+---
+
+# V for ~~Victory~~ View
+
+## React is the V in MVC
+
+---
+
+# Good or Bad?
+<Appear>
+  <div>
+<Text margin="2rem">
+👍 You <S type="bold">can</S> pick exactly the libraries you need
+</Text>
+</div>
+</Appear>
+<Appear>
+  <div>
+<Text>
+👎 You <S type="bold">need to</S> pick exactly the libraries you need
+</Text>
+</div>
+</Appear>
+
+---
+
+## React is all about components
+With React you split up your application into reusable components.
+
+Typical components:
+
+- Page header
+- Date input control
+- Registration form
+- Navigation
+- Etc.
+
+---
+export default CodeSlide
+
+## Thinking In React
+
+<iframe src="http://localhost:3000/thinkingInReact/" className="iframeExample"/>
+
+<Link href="https://reactjs.org/docs/thinking-in-react.html">
+Thinking In React
+</Link>
+
+---
+
+## What is a React component?
+A component can receive properties (aka. props) and can have internal state.
+
+Components should only contain display logic.
+
+Writing React components is a bit like writing your own HTML tags:
+
+```html
+  <MyComponent myproperty="is awesome"></MyComponent>
+```
+
+---
+
+
+## Hello World
+
+```javascript
+import React from "react";
+import ReactDOM from "react-dom";
+
+function App(props) {
+  return (
+    <div className="App">
+      <h1>👋🌍</h1>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App/>, rootElement);
+```
+
+[React Hello World - CodeSandbox](https://codesandbox.io/s/n7lrkrxvj0)
+
+---
+## JSX !== HTML
+
+```javascript
+function App(props) {
+  return (
+    <div className="App">
+      <h1>👋🌍</h1>
+    </div>
+  );
+}
+```
+
+---
+
+## JSX is syntactical sugar for
+
+### React.createElement
+
+```javascript
+React.createElement("div", null, "Hello World")
+```
+
+### 🍭 mmmhh… tasty  
+
+---
+
+## Two types of components
+
+<Layout>
+<Fill>
+<Heading size={4}>Class-based</Heading>
+  <Text>Can be stateful</Text>
+  <Text>aka. container</Text>
+</Fill>
+<Fill>
+<Heading size={4}>Functional</Heading>
+  <Text>Stateless</Text>
+  <Text>aka. presentational</Text>
+  <Text>Basically only the render method</Text>
+  </Fill>
+  </Layout>
+
+---
+
+## Class-based component
+
+```javascript
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+  render() {
+    return (
+      <div>Hello world</div>
+    );
+  } 
+}
+```
+
+---
+
+## Functional component
+
+```javascript
+function MyComponent(props) {
+  return (
+    <div>Hello World</div>
+  );
+}
+```
+
+---
+export default CodeSlide
+
+## Props
+
+You can think of props as parameters that you can pass to a component.
+
+```javascript
+import React from "react";
+import ReactDOM from "react-dom";
+
+function App(props) {
+  return (
+    <div className="App">
+      <h1>👋{props.name}</h1>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App name="Mario"/>, rootElement);
+```
+
+[React Component Props](https://codesandbox.io/s/ql5k7j3q6j)
+
+---
+export default CodeSlide
+
+## State
+
+```javascript
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      smiles: []
+    };
+  }
+  increase() {
+    this.setState({
+      smiles: this.state.smiles.concat("🙂")
+    });
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={() => this.increase()}>Click me</button>
+        <p>{this.state.smiles}</p>
+      </div>
+    );
+  }
+}
+```
+
+[Component with state - CodeSandbox](https://codesandbox.io/s/px092olmq)
+
+---
+
+## State
+
+<StateGraph></StateGraph>
+
+---
+<img src="/JS.svg" alt="JavaScript logo" height="200"/>
+
+## It’s all JavaScript
+
+React does not require you to learn a new domain-specific language (e.g. templating) as everything is plain JavaScript.
+
+---
+export default CodeSlide
+
+## List rendering with Angular
+
+#### app.component.ts
+```javascript
+export class AppComponent {
+  list = ["Goodyear", "Dunlop", "Fulda"]
+}
+```
+
+#### app.component.html
+```html
+<div>
+  <ul>
+    <li *ngFor="let listItem of list">{{listItem}}</li>
+  </ul>
+</div>
+```
+
+[Angular list rendering - CodeSandbox](https://codesandbox.io/s/r50pjqm1lq?fontsize=14)
+
+---
+export default CodeSlide
+
+## List rendering with React
+
+```javascript
+function App() {
+  const myList = ["Goodyear", "Dunlop", "Fulda"];
+  return (
+    <div>
+      <ul>
+        {myList.map(listItem => (
+          <li>{listItem}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+[React List rendering - CodeSandbox](https://codesandbox.io/s/6jy8nyxozw?fontsize=14)
+
+---
+## Separation of concerns?
+
+![Separation of Concerns](/separationOfConcerns.jpg)
+
+[Intro to React and Redux](https://blog.isquaredsoftware.com/presentations/2018-03-react-redux-intro/#/23)
+
+---
+## Why use React?
+
+State of user interfaces is difficult to handle with vanilla JavaScript.
+
+React allows you to focus on your application logic.
+
+De-facto industry standard with a huge ecosystem.
+
+---
+## But what about Redux?
+
+Using React together with Redux is a popular choice currently. However adding Redux to your app can increase its complexity tremendously.
+
+The first thing you should consider:
+
+[You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+
+by Dan Abramov (creator of Redux)
+
+---
+## Yeah… but what is Redux anyway?
+
+Redux is a predictable state container for JavaScript apps – following these main principles:
+
+* **Single source of truth:** the whole application state is stored centrally as a tree of plain objects
+* **State is read-only:** state can only be changed by dispatching actions
+* **Pure reducer functions:** state updates are handled by so-called reducers 
+
+`(currentState, action) => newState`
+
+---
+## Why Redux?
+
+![React State vs. Redux Store](/react_redux_comparison.png)
+---
+# 💪
+## Brush up your JavaScript fundamentals
+
+Getting into React is the perfect chance to improve your general JavaScript skills.
+
+Here is a good place to start:
+
+🔗 [JavaScript fundamentals before learning React - RWieruch](https://www.robinwieruch.de/javascript-fundamentals-react-requirements/)
+
+---
+## Functional Programming
+
+React & Redux both rely on some Functional Programming paradigms like pure functions, immutability, etc.
+
+Learning those basics will help a lot with understanding React/Redux and also improve your general programming skills.
+
+🔗 [Functional Programming Fundamentals](https://www.matthewgerstman.com/tech/functional-programming-fundamentals/)
+
+---
+# Questions?
+---
+# Sources
+[Intro to React and Redux](https://blog.isquaredsoftware.com/presentations/2018-03-react-redux-intro)
